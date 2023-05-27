@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float: left;
+            margin-right: 20px;
+            border: 2px solid #fff;
+        }
+
+        ul li.active{
+            border-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="img/诸葛大力 (1).jpg" id="bigImg" height="800px" alt="">
+    <ul>
+        <li class="active">
+            <a href="">
+                <img src="img/诸葛大力 (1).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">                                         
+                <img src="img/诸葛大力 (2).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (3).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (4).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (5).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (6).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (7).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (8).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="img/诸葛大力 (9).jpg" width="50px" alt="" class="smallImg">
+            </a>
+        </li>
+        
+    </ul>
+
+    <script>
+        var bigImg = document.getElementById('bigImg');
+        var smallImgs= document.getElementsByClassName('smallImg');
+
+        for(var i = 0; i<smallImgs.length; i++){
+            smallImgs[i].onmouseover=function(e){
+                console.log(e);
+                for(var j = 0; j < smallImgs.length; j++){
+                    smallImgs[j].parentNode.parentNode.setAttribute('class','');
+                }
+
+                var smallImgSrc = this.getAttribute('src');
+                bigImg.setAttribute('src',smallImgSrc);
+
+                this.parentNode.parentNode.setAttribute('class','active');
+            }
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>
